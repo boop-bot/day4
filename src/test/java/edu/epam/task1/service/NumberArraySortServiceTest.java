@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class NumberNumberArraySortServiceTest {
+public class NumberArraySortServiceTest {
     private NumberArraySortService numberArraySortService;
 
     @BeforeMethod

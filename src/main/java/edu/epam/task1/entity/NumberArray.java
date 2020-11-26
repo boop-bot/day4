@@ -2,25 +2,33 @@ package edu.epam.task1.entity;
 
 import java.util.Arrays;
 
-public class Array {
+public class NumberArray {
     private int[] value;
 
-    public Array() {}
+    public NumberArray() {}
 
-    public Array(int size) {
+    public NumberArray(int size) {
         this.value = new int[size];
     }
 
-    public Array(int ... value) {
+    public NumberArray(int ... value) {
         this.value = value;
     }
 
     public int get(int i) {
-        return value[i];
+        if (i < 0 || i >= value.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+            return value[i];
+        }
     }
 
     public void set(int i, int element) {
-        value[i] = element;
+        if (i < 0 || i >= value.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+            value[i] = element;
+        }
     }
 
     public int size() {
@@ -32,9 +40,9 @@ public class Array {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Array array = (Array) o;
+        NumberArray numberArray = (NumberArray) o;
 
-        return Arrays.equals(value, array.value);
+        return Arrays.equals(value, numberArray.value);
     }
 
     @Override
